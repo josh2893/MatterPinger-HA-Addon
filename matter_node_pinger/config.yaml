@@ -1,0 +1,31 @@
+name: "Matter Node Pinger"
+version: "0.1.7"
+slug: "matter_node_pinger"
+description: "Ping and re-interview selected Matter nodes on a schedule"
+startup: application
+boot: auto
+init: false
+arch:
+  - amd64
+  - aarch64
+  - armv7
+  - armhf
+  - i386
+
+options:
+  ws_url: "ws://core-matter-server:5580/ws"
+  match: "bilresa"
+  node_ids: ""
+  interval_seconds: 120
+  ping_attempts: 3
+  delay_seconds: 0.5
+  list_only: true
+
+schema:
+  ws_url: str
+  match: str
+  node_ids: str
+  interval_seconds: int
+  ping_attempts: int
+  delay_seconds: float
+  list_only: bool
