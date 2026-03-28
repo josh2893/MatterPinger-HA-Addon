@@ -1,5 +1,19 @@
 # Matter Node Pinger for Home Assistant
 
+
+> [!WARNING]
+> **Experimental workaround only**
+>
+> This add-on is **experimental** and is intended only as a temporary workaround / test tool while the underlying issue is investigated.
+>
+> Using periodic **pinging** and **re-interviewing** generates additional traffic on the **Thread** network. On larger or busier networks, or when used against multiple devices, this may introduce extra load, reduce stability, and create side effects of its own.
+>
+> It may also have a **negative impact on battery-powered devices**, as increased activity can reduce battery life.
+>
+> Because of this, it should be used **carefully**, only on **specific problem devices**, and not as a broad or permanent solution for an entire Matter / Thread deployment.
+>
+> The real goal is still to identify and fix the **root cause**, rather than rely on repeated reads, pinging, or re-interviews long term.
+
 A small custom Home Assistant add-on that connects to the Matter Server WebSocket, discovers commissioned Matter nodes, and can periodically **ping** and **re-interview** selected devices.
 
 This was built mainly to help test and work around reliability issues with some **sleepy IKEA Matter over Thread devices** such as:
